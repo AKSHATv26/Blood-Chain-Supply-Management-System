@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceed to Pay</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-details {
+            display: grid;
+            grid-gap: 20px;
+        }
+
+        .payment-details label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .payment-details input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .payment-button {
+            background-color: #cc0000;
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .payment-button:hover {
+            background-color: #990000;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Your navigation code here -->
+    </nav>
+
+    <section class="container">
+        <h2>Payment Details</h2>
+        <div class="payment-details">
+            <label for="amount">Amount Payable:</label>
+            <input type="text" id="amount" name="amount" value="1000" readonly>
+
+            <label for="gst">GST (18%):</label>
+            <input type="text" id="gst" name="gst" value="180" readonly>
+
+            <label for="taxes">Other Taxes:</label>
+            <input type="text" id="taxes" name="taxes" value="50" readonly>
+
+            <label for="total">Total Amount:</label>
+            <input type="text" id="total" name="total" value="1230" readonly>
+        </div>
+
+        <button class="payment-button" onclick="proceedToPayment()">Proceed to Pay</button>
+    </section>
+
+    <footer>
+        <!-- Your footer code here -->
+    </footer>
+
+    <script>
+        function proceedToPayment() {
+            // Add logic to handle payment processing here
+            alert('Payment processed successfully!');
+        }
+    </script>
+</body>
+</html>

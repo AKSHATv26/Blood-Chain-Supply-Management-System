@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Questionnaire & Consent Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #dc3545;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        input[type="checkbox"] + label,
+        input[type="radio"] + label {
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-right: 15px;
+            color: #495057;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        ul {
+            margin-top: 0;
+            padding-left: 20px;
+            color: #495057;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .checklist {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checklist label {
+            display: block;
+            margin-bottom: 5px;
+            color: #495057;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .terms-agree {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .terms-agree input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Blood Donor Questionnaire & Consent Form</h1>
+
+    <form action="#" method="post">
+        <!-- Personal Information -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="fatherName">Father’s Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required><br>
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" required><br>
+
+        <label for="organization">Organization:</label>
+        <input type="text" id="organization" name="organization"><br>
+
+        <label for="address">Address for communication:</label>
+        <textarea id="address" name="address" rows="4" required></textarea><br>
+
+        <label for="telephone">Telephone:</label>
+        <input type="tel" id="telephone" name="telephone"><br>
+
+        <label for="mobile">Mobile No.:</label>
+        <input type="tel" id="mobile" name="mobile" required><br>
+
+        <label for="callMobile">Would you like us to call you on your mobile:</label>
+        <input type="checkbox" id="callMobile" name="callMobile" value="yes">
+        <label for="callMobile">Yes</label><br>
+
+        <label for="fax">Fax No.:</label>
+        <input type="tel" id="fax" name="fax"><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="donatedBefore">Have you donated previously:</label>
+        <input type="checkbox" id="donatedBefore" name="donatedBefore" value="yes">
+        <label for="donatedBefore">Yes</label><br>
+
+        <label for="occasions">If yes, how many occasions:</label>
+        <input type="number" id="occasions" name="occasions"><br>
+
+        <label for="lastDonation">When last:</label>
+        <input type="date" id="lastDonation" name="lastDonation"><br>
+
+        <label for="bloodGroup">Your blood group:</label>
+        <input type="text" id="bloodGroup" name="bloodGroup"><br>
+
+        <label for="lastMealTime">Time of last meal:</label>
+        <input type="time" id="lastMealTime" name="lastMealTime"><br>
+
+        <label for="discomfort">Did you have any discomfort during/after donation?</label>
+        <input type="checkbox" id="discomfort" name="discomfort" value="yes">
+        <label for="discomfort">Yes</label><br>
+
+        <!-- Medical History -->
+        <label>Tick the appropriate answer:</label><br>
+        <label for="feelWell">1. Do you feel well today?</label>
+        <input type="radio" id="feelWellYes" name="feelWell" value="yes">
+        <label for="feelWellYes">Yes</label>
+        <input type="radio" id="feelWellNo" name="feelWell" value="no">
+        <label for="feelWellNo">No</label><br>
+
+        <label for="eatLast4Hours">2. Did you have something to eat in the last 4 hours?</label>
+        <input type="radio" id="eatLast4HoursYes" name="eatLast4Hours" value="yes">
+        <label for="eatLast4HoursYes">Yes</label>
+        <input type="radio" id="eatLast4HoursNo" name="eatLast4Hours" value="no">
+        <label for="eatLast4HoursNo">No</label><br>
+
+        <label for="sleepWell">3. Did you sleep well last night?</label>
+        <input type="radio" id="sleepWellYes" name="sleepWell" value="yes">
+        <label for="sleepWellYes">Yes</label>
+        <input type="radio" id="sleepWellNo" name="sleepWell" value="no">
+        <label for="sleepWellNo">No</label><br>
+
+        <label>4. Have you any reason to believe that you may be infected by either Hepatitis, Malaria, HIV/AIDS, and/or venereal disease?</label>
+        <input type="radio" id="infectedYes" name="infected" value="yes">
+        <label for="infectedYes">Yes</label>
+        <input type="radio" id="infectedNo" name="infected" value="no">
+        <label for="infectedNo">No</label><br>
+
+        <label>5. In the last 6 months have you had any history of the following:</label>
+        <ul><li><input type="checkbox" id="weightLoss" name="weightLoss" value="yes">
+        <label for="weightLoss">Unexplained weight loss</label></li>
+        <li><input type="checkbox" id="repeatedDiarrhea" name="repeatedDiarrhea" value="yes">
+        <label for="repeatedDiarrhea">Repeated Diarrhea</label></li>
+        <li><input type="checkbox" id="swollenGlands" name="swollenGlands" value="yes">
+        <label for="swollenGlands">Swollen glands</label></li>
+        <li><input type="checkbox" id="lowGradeFever" name="lowGradeFever" value="yes">
+        <label for="lowGradeFever">Continuous low-grade fever</label></li></ul><br>
+
+        <label>6. In the last 6 months have you had any of the following:</label>
+        <ul><li><input type="checkbox" id="tattooing" name="tattooing" value="yes">
+        <label for="tattooing">Tattooing</label></li>
+        <li><input type="checkbox" id="earPiercing" name="earPiercing" value="yes">
+        <label for="earPiercing">Ear Piercing</label></li>
+        <li><input type="checkbox" id="dentalExtraction" name="dentalExtraction" value="yes">
+        <label for="dentalExtraction">Dental Extraction</label></li></ul><br>
+
+        <label>7. Do you suffer from or have suffered from any of the following diseases?</label>
+        <ul><li><input type="checkbox" id="heartDisease" name="heartDisease" value="yes">
+        <label for="heartDisease">Heart Disease</label></li>
+        <li><input type="checkbox" id="lungDisease" name="lungDisease" value="yes">
+        <label for="lungDisease">Lung Disease</label></li>
+        <li><input type="checkbox" id="kidneyDisease" name="kidneyDisease" value="yes">
+        <label for="kidneyDisease">Kidney Disease</label></li>
+        <li><input type="checkbox" id="cancer" name="cancer" value="yes">
+        <label for="cancer">Cancer/ Malignant Disease</label></li>
+        <li><input type="checkbox" id="epilepsy" name="epilepsy" value="yes">
+        <label for="epilepsy">Epilepsy</label></li>
+        <li><input type="checkbox" id="diabetes" name="diabetes" value="yes">
+        <label for="diabetes">Diabetes</label></li>
+        <li><input type="checkbox" id="tuberculosis" name="tuberculosis" value="yes">
+        <label for="tuberculosis">Tuberculosis</label></li>
+        <li><input type="checkbox" id="bleedingTendency" name="bleedingTendency" value="yes">
+        <label for="bleedingTendency">Abnormal bleeding tendency</label></li>
+        <li><input type="checkbox" id="hepatitis" name="hepatitis" value="yes">
+        <label for="hepatitis">Hepatitis B/C</label></li>
+        <li><input type="checkbox" id="allergicDisease" name="allergicDisease" value="yes">
+        <label for="allergicDisease">Allergic Disease</label></li>
+        <li><input type="checkbox" id="jaundice" name="jaundice" value="yes">
+        <label for="jaundice">Jaundice (last 1 yr.)</label></li>
+        <li><input type="checkbox" id="std" name="std" value="yes">
+        <label for="std">Sexually Transmitted Diseases</label></li>
+        <li><input type="checkbox" id="malaria" name="malaria" value="yes">
+        <label for="malaria">Malaria (last 6 months)</label></li>
+        <li><input type="checkbox" id="typhoid" name="typhoid" value="yes">
+        <label for="typhoid">Typhoid (last 1 yr.)</label></li>
+        <li><input type="checkbox" id="faintingSpells" name="faintingSpells" value="yes">
+        <label for="faintingSpells">Fainting Spells</label></li></ul><br>
+
+        <label>8. Are you taking or have taken any of these in the past 72 hours?</label>
+        <ul><li><input type="checkbox" id="antibiotics" name="antibiotics" value="yes">
+        <label for="antibiotics">Antibiotics</label></li>
+        <li><input type="checkbox" id="aspirin" name="aspirin" value="yes">
+        <label for="aspirin">Aspirin</label></li>
+        <li><input type="checkbox" id="alcohol" name="alcohol" value="yes">
+        <label for="alcohol">Alcohol</label></li>
+        <li><input type="checkbox" id="steroids" name="steroids" value="yes">
+        <label for="steroids">Steroids</label></li>
+        <li><input type="checkbox" id="vaccinations" name="vaccinations" value="yes">
+        <label for="vaccinations">Vaccinations</label></li>
+        <li><input type="checkbox" id="dogBiteVaccine" name="dogBiteVaccine" value="yes">
+        <label for="dogBiteVaccine">Dog Bite/Rabies Vaccine (1 yr.)</label></li></ul><br>
+
+        <label>9. Is there any history of surgery or blood transfusion in the past 6 months?</label>
+        <ul><li><input type="checkbox" id="majorSurgery" name="majorSurgery" value="yes">
+        <label for="majorSurgery">Major Surgery</label></li>
+        <li><input type="checkbox" id="minorSurgery" name="minorSurgery" value="yes">
+        <label for="minorSurgery">Minor Surgery</label></li>
+        <li><input type="checkbox" id="bloodTransfusion" name="bloodTransfusion" value="yes">
+        <label for="bloodTransfusion">Blood Transfusion</label></li></ul><br>
+
+        <label>10. For women donors,</label>
+        <label for="pregnant">Are you pregnant?</label>
+        <input type="radio" id="pregnantYes" name="pregnant" value="yes">
+        <label for="pregnantYes">Yes</label>
+        <input type="radio" id="pregnantNo" name="pregnant" value="no">
+        <label for="pregnantNo">No</label><br>
+
+        <label for="abortion">Have you had an abortion in the last 3 months?</label>
+        <input type="radio" id="abortionYes" name="abortion" value="yes">
+        <label for="abortionYes">Yes</label>
+        <input type="radio" id="abortionNo" name="abortion" value="no">
+        <label for="abortionNo">No</label><br>
+
+        <label for="childUnderOne">Do you have a child less than one year old?</label>
+        <input type="radio" id="childUnderOneYes" name="childUnderOne" value="yes">
+        <label for="childUnderOneYes">Yes</label>
+        <input type="radio" id="childUnderOneNo" name="childUnderOne" value="no">
+        <label for="childUnderOneNo">No</label><br>
+
+        <label>Would you like to be informed about any abnormal test result at the address furnished by you?</label>
+        <input type="radio" id="abnormalTestResultYes" name="abnormalTestResult" value="yes">
+        <label for="abnormalTestResultYes">Yes</label>
+        <input type="radio" id="abnormalTestResultNo" name="abnormalTestResult" value="no">
+        <label for="abnormalTestResultNo">No</label><br>
+
+        <label>Have you read and understood all the information represented and answered all the questions truthfully, as any incorrect statement or concealment may affect your health or may harm the recipient?</label>
+        <input type="radio" id="understoodYes" name="understood" value="yes">
+        <label for="understoodYes">Yes</label>
+        <input type="radio" id="understoodNo" name="understood" value="no">
+        <label for="understoodNo">No</label><br>
+
+        <label>I understand that:</label><br>
+        <p>(a) blood donation is a totally voluntary act and no inducement or remuneration has been offered.</p>
+        <p>(b) donation of blood/components is a medical procedure and that by donating voluntarily, I accept the risks associated with this procedure.</p>
+        <p>(c) my blood will be tested for Hepatitis B, Hepatitis-C, malaria Parasite, HIV/AIDs, and venereal diseases in addition to any other screening tests required to ensure blood safety.</p>
+        <p>I prohibit any information provided by me or about my donation to be disclosed to any individual or government agency without my prior permission.</p><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required><br>
+
+        <label for="signature">Donor’s Signature:</label>
+        <input type="text" id="signature" name="signature" required><br>
+
+        <!-- General Physical Examination Section -->
+
+        <label>General Physical Examination:</label><br>
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" required><br>
+
+        <label for="pulse">Pulse:</label>
+        <input type="text" id="pulse" name="pulse" required><br>
+
+        <label for="hb">Hb:</label>
+        <input type="text" id="hb" name="hb" required><br>
+
+        <label for="bp">BP:</label>
+        <input type="text" id="bp" name="bp" required><br>
+
+        <label for="temperature">Temperature:</label>
+        <input type="text" id="temperature" name="temperature" required><br>
+
+        <label for="acceptDeferReason">Accept Defer Reason:</label>
+        <textarea id="acceptDeferReason" name="acceptDeferReason" rows="4"></textarea><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Add your JavaScript code here if needed -->
+    <script>
+        // Add your custom JavaScript code here
+    </script>
+
+</body>
+</html>

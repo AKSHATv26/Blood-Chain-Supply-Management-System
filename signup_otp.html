@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            background-image: url(Background\ 4.avif);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .otp-container {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+        }
+
+        .otp-header {
+            background-color: #095aa0;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .otp-header img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .otp-header h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .otp-form {
+            padding: 20px;
+        }
+
+        .otp-inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .otp-inputs input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .resend-otp {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .resend-otp a {
+            color: #095aa0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .notification {
+            display: none;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .error {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .unique-id {
+            font-size: 18px;
+            color: #095aa0;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .otp-resend-message {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp-container">
+        <div class="otp-header">
+            <u><h1>Verify OTP</h1></u>
+        </div>
+
+        <form class="otp-form" onsubmit="return false;">
+            <div class="otp-inputs">
+                <input type="text" id="otp1" maxlength="1" autocomplete="off" required>
+                <input type="text" id="otp2" maxlength="1" autocomplete="off" required>
+                <input type="text" id="otp3" maxlength="1" autocomplete="off" required>
+                <input type="text" id="otp4" maxlength="1" autocomplete="off" required>
+            </div>
+
+            <button onclick="verifyOTP()">Verify OTP</button>
+        </form>
+
+        <p class="resend-otp">
+            Didn't receive OTP? 
+            <a href="#" onclick="resendOTP()">Resend OTP</a>
+        </p>
+
+        <!-- Notification div -->
+        <div class="notification" id="notification"></div>
+
+        <!-- Unique ID display -->
+        <div class="unique-id" id="uniqueId"></div>
+
+        <!-- Resend OTP success message -->
+        <p class="otp-resend-message" id="resendMessage">OTP Resent Successfully</p>
+    </div>
+
+    <script>
+        var timer;
+        var aadhaar;
+        var mobile;
+        var otp;
+
+        function generateUniqueId() {
+            // Simulated unique ID generation logic (replace with your actual logic)
+            return Math.floor(100000 + Math.random() * 900000);
+        }
+
+        function storeUniqueId(aadhaar, mobile, uniqueId) {
+            // Simulated storage of unique ID in local storage
+            var uniqueIdMap = JSON.parse(localStorage.getItem('uniqueIdMap')) || {};
+            var key = aadhaar + '_' + mobile;
+            uniqueIdMap[key] = uniqueId;
+            localStorage.setItem('uniqueIdMap', JSON.stringify(uniqueIdMap));
+        }
+
+        function getUniqueId(aadhaar, mobile) {
+            // Retrieve unique ID from local storage
+            var uniqueIdMap = JSON.parse(localStorage.getItem('uniqueIdMap')) || {};
+            var key = aadhaar + '_' + mobile;
+            return uniqueIdMap[key];
+        }
+
+        function showNotification(message, type) {
+            var notificationElement = document.getElementById('notification');
+            notificationElement.textContent = message;
+
+            if (type === 'success') {
+                notificationElement.className = 'notification success';
+            } else if (type === 'error') {
+                notificationElement.className = 'notification error';
+            }
+
+            notificationElement.style.display = 'block';
+
+            setTimeout(function () {
+                notificationElement.style.display = 'none';
+            }, 3000);
+        }
+
+        function verifyOTP() {
+            var otp1 = document.getElementById('otp1').value;
+            var otp2 = document.getElementById('otp2').value;
+            var otp3 = document.getElementById('otp3').value;
+            var otp4 = document.getElementById('otp4').value;
+
+            var enteredOTP = otp1 + otp2 + otp3 + otp4;
+
+            if (enteredOTP == otp) {
+                // Show "Signed Up Successfully" message when OTP is correct
+                showNotification('Signed Up Successfully', 'success');
+
+                // Generate and display the unique ID
+                var uniqueId = getUniqueId(aadhaar, mobile) || generateUniqueId();
+                document.getElementById('uniqueId').textContent = 'Your Unique ID: ' + uniqueId;
+                
+                // Store the unique ID
+                storeUniqueId(aadhaar, mobile, uniqueId);
+            } else {
+                showNotification('Incorrect OTP. Please try again.', 'error');
+            }
+        }
+
+        function resendOTP() {
+            // Simulate OTP resend
+            clearTimeout(timer);
+            otp = generateUniqueId();
+            timer = setTimeout(function () {
+                showNotification('New OTP sent successfully', 'success');
+            }, 2000);
+        }
+
+        // Automatically move to the next input field after entering a digit
+        document.querySelectorAll('.otp-inputs input').forEach(function (input, index, inputs) {
+            input.addEventListener('input', function () {
+                if (input.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+
+            input.addEventListener('keydown', function (event) {
+                // Prevent the Enter key from submitting the form
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                }
+
+                // Move to the previous input field on Backspace key
+                if (event.key === 'Backspace' && index > 0) {
+                    inputs[index].focus();
+                }
+            });
+        });
+
+        // Initial setup
+        aadhaar = prompt('Enter Aadhaar number:');  // Simulated prompt, replace with your actual logic
+        mobile = prompt('Enter mobile number:');    // Simulated prompt, replace with your actual logic
+        otp = generateUniqueId();
+        timer = setTimeout(function () {
+            showNotification('OTP sent successfully', 'success');
+        }, 2000);
+
+</script>
+</body>
+</html>

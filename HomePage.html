@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Supply Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .highlight {
+      background-color: yellow;
+    }
+
+    body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header nav {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 12;
+}
+
+.navbar {
+    width: 90%;
+    display: flex;
+    margin: 20px auto 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav .logo {
+    height: 80px;
+    width: 150px;
+}
+
+.logo img {
+    height: 91px;
+    width: 261px;
+    object-fit: contain;
+}
+
+nav .menu {
+    display: flex;
+}
+
+nav .menu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+nav .menu a {
+    color: #2c3e50;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav .menu a:hover {
+    color: #000;
+}
+
+nav .profile-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1345px;
+    margin: 0 auto;
+}
+
+    nav {
+      position: relative;
+      background-color: #ffffff;
+      padding: 15px;
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+
+      .container {
+      max-width: 1345px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background-image: url('https://milwaukeesynod.org/wp-content/uploads/light-background-5.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #eb2727;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .hero h1 {
+      font-size: 5em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 img {
+      height: auto;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      font-size: 10em;
+      display: inline-block;
+      border-right: 2px solid;
+    }
+
+    .hero h1 span::after {
+      content: '|';
+      display: inline-block;
+      margin-left: 3px;
+    }
+
+    .header-container {
+      background-image: url('https://milwaukeesynod.org/wp-content/uploads/light-background-5.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #000000;
+      font-family: 'Lucida Sans';
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
+    .about-blood {
+      background-color: #fff;
+      padding: 8px;
+      margin: 20px;
+    }
+
+    .about-blood h2 {
+      color: #cc0000;
+    }
+
+    .about-blood p {
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+
+    .info-image {
+      margin-top: 30px;
+    }
+
+    .info-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .donor-form {
+      background-color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+      font-size: 1.1em;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #cc0000;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #990000;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer p {
+      font-size: 1.1em;
+    }
+
+    /* Add styles for the Up Arrow button */
+    #upArrow {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      color: #fff;
+      background-color: #cc0000;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #upArrow:hover {
+      background-color: #990000;
+    }
+
+    .typing-text {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      display: inline-block;
+    }
+
+    .color {
+  width: initial;
+  height: initial;
+  background-color: red;
+  animation: example 4s infinite;
+}
+
+    @keyframes example {
+  0%   {background-color: red;}
+  20%  {background-color: yellow;}
+  40%  {background-color: blue;}
+  60% {background-color: rgb(255, 94, 0);}
+  80%  {background-color: rgb(9, 255, 0);}
+  100%  {background-color: red;}
+}
+  </style>
+  <script>
+    // JavaScript for scrolling to the top when the up arrow is clicked
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+  </script>
+</head>
+<body>
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <img src="Main Logo.png" alt="">
+        </div>
+        <ul class="menu">
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="DonateBloodPage.html">Donate Blood</a></li>
+          <li><a href="GetBloodPage.html">Get Blood</a></li>
+          <li><a href="LoginPage.html">Login</a></li>
+          <li><a href="SignUpPage.html">Signup</a></li>
+        </ul>
+        <div class="user-box">
+          <a href="profile.html"><button class="user-profile">User Profile</button></a>
+      </div>
+        </nav>
+<br><br>
+<div class="typing-text searchable">
+<div class="container">
+  <h1><img src="https://www.asmiglobalsoftwares.com/assets/img/bloodbank.jpg" alt="Blood Bank Image"></h1>
+</div>
+</div>
+</section>
+<section class="about-blood searchable">
+<div class="container">
+  <h2>About Blood Supply Management System</h2>
+  <p>
+    Blood Supply Management System is dedicated to ensuring a safe and sustainable blood supply for those in need.
+    Your contribution can help us achieve our mission of saving lives through blood donation.
+  </p>
+  <p>Join us in making a difference in the community.</p>
+</div>
+</section>
+<div class="about-blood searchable">
+<div class="container">
+  <h2>Understanding Blood</h2>
+  <p>
+    Blood is a complex and vital fluid in the human body, responsible for transporting nutrients, oxygen, hormones, and waste products. It consists of red blood cells, white blood cells, platelets, and plasma.
+  </p>
+</div>
+</div>
+<section class="about-blood searchable">
+<div class="container">
+  <h2>Blood Donation</h2>
+
+  <h3>&#10148; Importance of Blood Donation</h3>
+  <p>Discover how blood donation saves lives by providing essential support to patients undergoing surgeries, trauma victims, and those with medical conditions.</p>
+<br>
+  <h3>&#10148; Eligibility and Requirements</h3>
+  <p>Find out if you're eligible to donate based on age, weight, health, and lifestyle criteria. Learn about pre-donation screening and tests to ensure the safety of both donors and recipients.</p>
+<br>
+  <h3>&#10148; Donation Process</h3>
+  <p>Understand the step-by-step process of blood donation, from registration and health checks to the donation itself and post-donation care.</p>
+<br>
+  <h2>Blood Components</h2>
+
+  <h3>&#10148; Red Blood Cells (RBCs)</h3>
+  <p>Learn about the role of red blood cells in transporting oxygen to body tissues and their specific medical uses.</p>
+<br>
+  <h3>&#10148; White Blood Cells (WBCs)</h3>
+  <p>Discover how white blood cells contribute to the immune system and their role in various medical treatments.</p>
+<br>
+  <h3>&#10148; Platelets</h3>
+  <p>Understand the importance of platelets in blood clotting and their common use in cancer treatments.</p>
+<br>
+  <h3>&#10148; Plasma</h3>
+  <p>Explore the liquid component of blood containing water, electrolytes, proteins, and hormones, vital for maintaining blood pressure and supporting clotting.</p>
+<br>
+  <h2>Blood Transfusion</h2>
+
+  <h3>&#10148; Indications for Transfusion</h3>
+  <p>Understand when blood transfusions are necessary, such as during surgical procedures, trauma, anemia, and cancer treatment.</p>
+<br>
+  <h3>&#10148; Crossmatching</h3>
+  <p>Learn about the process of matching donor and recipient blood to prevent adverse reactions.</p>
+<br>
+  <h3>&#10148; Risks and Precautions</h3>
+  <p>Discover possible complications associated with blood transfusions and steps to minimize risks.</p>
+<br>
+</div>
+</section>
+<footer>
+<div class="container searchable">
+  <p>&copy; 2023 Blood Supply Management System. All rights reserved.</p>
+</div>
+</footer>
+<div id="upArrow" onclick="scrollToTop()">↑</div>
+</body>
+</html>

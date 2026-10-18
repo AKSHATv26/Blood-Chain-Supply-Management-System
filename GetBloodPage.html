@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Blood Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8; /* Lighter background color */
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+    
+        nav {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+    
+        .get-blood h2 {
+            color: #cc0000; /* Blood red color for headings */
+        }
+    
+        .get-blood p {
+            color: #777;
+        }
+    
+        .get-blood form {
+            display: grid;
+            grid-gap: 20px;
+        }
+    
+        .get-blood label {
+            font-weight: bold;
+            color: #333;
+        }
+    
+        .get-blood select,
+        .get-blood input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd; /* Lighter border color */
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+    
+        .get-blood button {
+            background-color: #cc0000;
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+    
+        .get-blood button:hover {
+            background-color: #990000;
+        }
+    
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 1px solid #555; /* Separation line between content and footer */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Your navigation code here -->
+    </nav>
+
+    <section class="get-blood">
+        <div class="container">
+            <h2><center>Get Blood Online</center></h2>
+            <p>Fill out the form below to request blood. Choose your nearest blood center and make an online payment.</p>
+
+            <form id="bloodRequestForm" action="process_order.php" method="post" onsubmit="return redirectToPayment()">
+                <label for="uniqueId">Unique ID:</label>
+                <input type="text" id="uniqueId" name="uniqueId" required>
+
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="mobile">Mobile:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+                <label for="bloodType">Select Blood Type:</label>
+                <select id="bloodType" name="bloodType" required>
+                <option value="" disabled selected>Select your blood type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                </select>
+
+                <label for="quantity">Quantity (in units):</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <label for="location">Select Nearest Blood Bank using Google Maps:</label>
+                <input type="text" id="location" name="location" placeholder="Search for your nearest blood bank" required>
+
+                <label for="payment">Payment Method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="paypal">PayTM</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="paypal">UPI</option>
+                    <option value="paypal">PhonePay</option>
+                    <option value="paypal">GPay</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Your footer code here -->
+    </footer>
+    <script>
+        function redirectToPayment() {
+            // Assuming validation is successful
+            // You can add more sophisticated validation as needed
+
+            // Redirect to the payment page
+            window.location.href = 'PaymentPage.html'; // Replace with your actual payment page URL
+            return false; // Prevent the form from submitting to process_order.php
+        }
+    </script>
+</body>
+</html>
