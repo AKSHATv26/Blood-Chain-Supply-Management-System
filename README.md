@@ -4,6 +4,19 @@
 
 > An academic project. I was the lead developer.
 
+## Screenshots
+
+<p align="center">
+<img src="docs/screenshots/01.jpg" width="49%" alt="Screenshot 1">
+<img src="docs/screenshots/02.jpg" width="49%" alt="Screenshot 2">
+<img src="docs/screenshots/03.jpg" width="49%" alt="Screenshot 3">
+<img src="docs/screenshots/04.jpg" width="49%" alt="Screenshot 4">
+<img src="docs/screenshots/05.jpg" width="49%" alt="Screenshot 5">
+<img src="docs/screenshots/06.jpg" width="49%" alt="Screenshot 6">
+<img src="docs/screenshots/07.jpg" width="49%" alt="Screenshot 7">
+<img src="docs/screenshots/08.jpg" width="49%" alt="Screenshot 8">
+</p>
+
 ## User flow
 ```mermaid
 flowchart LR
